@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap');
+
+body {
+    font-family: 'IBM Plex Mono', monospace;
+    background-color: gainsboro;
+}
+
+header {
+    text-align: center;
+    color: pink;
+    background-color: black;
+    padding: 0.005rem;
+}
+
+button {
+    display: block;
+    margin: auto;
+    background-color: aliceblue;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+select {
+    display: block;
+    margin: 1rem auto;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+#hangman-game-conatainer {
+    display: block;
+    margin: 2rem auto;
+    max-width: 75%;
+    text-align: center;
+    padding: 2rem;
+    background-color: ghostwhite;
+    border: solid;
+}
+
+#word {
+    font-size: 1.25rem;
+    padding: 1rem;
+}
+
+#letter-container {
+    margin: auto;
+}
+
+.letter {
+    cursor: pointer;
+}
+
