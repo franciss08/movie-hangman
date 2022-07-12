@@ -50,3 +50,6 @@ select {
     cursor: pointer;
 }
 
+img {
+    max-width: 70%;
+}

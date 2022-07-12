@@ -174,6 +174,7 @@ const generateAlphabet = () => {
         newLetter.style.borderRadius = '0.5rem';
         letterContainer.appendChild(newLetter);
         newLetter.addEventListener('click', letterPressed);
+        newLetter.addEventListener('touchstart', letterPressed);
     }
     addLivesLeftMessage();
 }
@@ -181,6 +182,7 @@ const generateAlphabet = () => {
 //RUNNING THE GAME
 //returns the letter and the ID of the letter that was clicked
 const letterPressed = (event) => {
+
     console.log(event.path[0].innerText);
     console.log(event.path[0].id);
     //return event.path[0].innerText;
@@ -345,6 +347,7 @@ const removeAlphabetEventListeners = () => {
     for (let i = 97; i<123; i++) {
         const elementToRemoveListenerFrom = document.querySelector(`#letter-${i}`);
         elementToRemoveListenerFrom.removeEventListener('click', letterPressed);
+        elementToRemoveListenerFrom.removeEventListener('touchstart', letterPressed);
     }
 }
 
