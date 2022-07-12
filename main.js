@@ -173,8 +173,8 @@ const generateAlphabet = () => {
         newLetter.style.backgroundColor = letterInitialColor;
         newLetter.style.borderRadius = '0.5rem';
         letterContainer.appendChild(newLetter);
-        newLetter.addEventListener('click', letterPressed);
-        newLetter.addEventListener('touchstart', letterPressed);
+        //newLetter.addEventListener('click', letterPressed);
+        newLetter.addEventListener('pointerdown', letterPressed);
     }
     addLivesLeftMessage();
 }
@@ -346,8 +346,8 @@ const updateLivesLeftMessage = () => {
 const removeAlphabetEventListeners = () => {
     for (let i = 97; i<123; i++) {
         const elementToRemoveListenerFrom = document.querySelector(`#letter-${i}`);
-        elementToRemoveListenerFrom.removeEventListener('click', letterPressed);
-        elementToRemoveListenerFrom.removeEventListener('touchstart', letterPressed);
+        //elementToRemoveListenerFrom.removeEventListener('click', letterPressed);
+        elementToRemoveListenerFrom.removeEventListener('pointerdown', letterPressed);
     }
 }
 
