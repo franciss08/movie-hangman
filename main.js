@@ -174,19 +174,29 @@ const generateAlphabet = () => {
         newLetter.style.borderRadius = '0.5rem';
         letterContainer.appendChild(newLetter);
         //newLetter.addEventListener('click', letterPressed);
-        newLetter.addEventListener('pointerdown', letterPressed);
+        newLetter.addEventListener('click', letterPressed);
     }
+    //letterContainer.addEventListener('click', whichLetter);
     addLivesLeftMessage();
 }
 
+/*const whichLetter = (event) => {
+    event.preventDefault();
+    console.log(event);
+    console.log(event.target.innerHTML);
+    console.log(event.target.id);
+    const letter = event.target.innerHTML;
+    const id = event.path[0].id;
+    checkLetter(letter, id);
+}
+*/
 //RUNNING THE GAME
 //returns the letter and the ID of the letter that was clicked
 const letterPressed = (event) => {
-
-    console.log(event.path[0].innerText);
-    console.log(event.path[0].id);
+    console.log(event.target.innerText);
+    console.log(event.target.id);
     //return event.path[0].innerText;
-    checkLetter(event.path[0].innerText,event.path[0].id);
+    checkLetter(event.target.innerText,event.target.id);
 }
 
 //runs a function that takes the id and letter of the guessed letter, calls a function to check it its in the word or not
@@ -335,10 +345,9 @@ const addLivesLeftMessage = () => {
 }
 
 const updateLivesLeftMessage = () => {
-    if (lives) {
-        const livesLeft = document.querySelector('#lives-display');
-        livesLeft.innerText = `Lives: ${lives}`;
-    } else {
+    const livesLeft = document.querySelector('#lives-display');
+    livesLeft.innerText = `Lives: ${lives}`;
+    if (!lives) {
         gameOver();
     }
 }
