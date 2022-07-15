@@ -248,6 +248,7 @@ const revealLetter = (arrayOfInstanceIndexes) => {
 //function runs when word has been fully guessed
 const allDone = async () => {
     removeAlphabetEventListeners();
+    clearPage();
     const wellDoneMessage = document.createElement('h1');
     const livesLeftMessage = document.createElement('h2');
     wellDoneMessage.innerText = 'Well done! You got it!';
@@ -269,6 +270,7 @@ const allDone = async () => {
 //Runs if lives run out!
 const gameOver = async () => {
     removeAlphabetEventListeners();
+    clearPage();//clears the page although not sure it I want is or not
     const gameOverMessage = document.createElement('h1');
     gameOverMessage.innerText = 'GAME OVER! You failed!';
     const actualAnswerIs = document.createElement('h2');
@@ -356,7 +358,7 @@ const removeAlphabetEventListeners = () => {
     for (let i = 97; i<123; i++) {
         const elementToRemoveListenerFrom = document.querySelector(`#letter-${i}`);
         //elementToRemoveListenerFrom.removeEventListener('click', letterPressed);
-        elementToRemoveListenerFrom.removeEventListener('pointerdown', letterPressed);
+        elementToRemoveListenerFrom.removeEventListener('click', letterPressed);
     }
 }
 
